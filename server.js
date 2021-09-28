@@ -1,6 +1,7 @@
 require('./config/connection')
 const express = require('express')
-const port = (process.env.port || 5000)
+const host = '0.0.0.0';
+const port = process.env.PORT || 5000;
 
 // express instance
 const app = express()
@@ -12,7 +13,7 @@ app.set('port', port)
 app.use('/api',require('./routes'))
 
 // express init
-app.listen(app.get('port'), (err) => {
+app.listen(port, host, (err) => {
   if (err) {
     console.log(err)
   } else {
