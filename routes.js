@@ -19,7 +19,7 @@ routes.get('/:id', (req, res) => {
   const {
     id
   } = req.params
-  const query = `SELECT * FROM movie WHERE mov_id=${id}`
+  const query = `SELECT * FROM movie WHERE mov_id='${id}'`
   connection.query(query, [id], (err, rows, fields) => {
     if (err) {
       throw err;
