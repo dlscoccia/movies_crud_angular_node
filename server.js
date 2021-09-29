@@ -3,7 +3,7 @@ const express = require('express')
 const host = '0.0.0.0';
 const port = process.env.PORT || 5000;
 
-// express instance
+// express instance.
 const app = express()
 app.use(express.json())
 // port config

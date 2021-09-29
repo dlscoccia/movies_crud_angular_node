@@ -2,7 +2,7 @@ const routes = require('express').Router()
 const connection = require('./config/connection')
 
 // Routes declarations
-// GET ALL
+// GET ALL MOVIES
 routes.get('/', (req, res) => {
   const query = 'SELECT * FROM movie'
   connection.query(query, (err, rows, fields) => {
