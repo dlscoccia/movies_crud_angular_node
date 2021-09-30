@@ -13,7 +13,7 @@ routes.get('/', (req, res) => {
     }
   })
 })
- 
+
 // GET SPECIFIC ID
 routes.get('/:id', (req, res) => {
   const {
@@ -28,6 +28,19 @@ routes.get('/:id', (req, res) => {
     }
   })
 })
+
+// GET MOVIES BY NAME
+routes.get('/movie/:title', (req, res) => {
+  const query = `SELECT * FROM movie WHERE mov_title LIKE='%${title}'`
+  connection.query(query, (err, rows, fields) => {
+    if (err) {
+      throw err;
+    } else {
+      res.json(rows)
+    }
+  })
+})
+
 
 // POST 
 routes.post('/', (req, res) => {
