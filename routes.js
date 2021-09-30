@@ -34,7 +34,7 @@ routes.get('/movie/:title', (req, res) => {
   const {
     title
   } = req.params
-  const query = `SELECT * FROM movie WHERE mov_title LIKE='%${title}'`
+  const query = `SELECT * FROM movie WHERE mov_title LIKE=%${title}%`
   connection.query(query, (err, rows, fields) => {
     if (err) {
       throw err;
